@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI
 from scrapers.demo_data import obtener_demo_eventos
 from scrapers.soccervista import scrap_soccervista_prob
@@ -8,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "Servicio de Apuestas Inteligente Activo"}
+    return {"message": "Servicio de Apuestas con SoccerVista (URL alternativa)"}
 
 @app.get("/apuestas")
 def apuestas():

@@ -1,4 +1,3 @@
-
 def calcular_valor(prob, cuota):
     return round((prob * cuota) - 1, 3)
 

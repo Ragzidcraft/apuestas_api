@@ -1,13 +1,12 @@
-
 import requests
 from bs4 import BeautifulSoup
 from unidecode import unidecode
 
 def normalizar(texto):
-    return unidecode(texto.strip().lower().replace("fc", "").replace("cf", ""))
+    return unidecode(texto.strip().lower().replace("fc", "").replace("cf", "").replace(".", "").replace("-", " ").replace("  ", " "))
 
 def scrap_soccervista_prob(evento):
-    url = "https://www.soccervista.com/"
+    url = "https://www.soccervista.com/next_matches.php"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
         "Accept-Language": "en-US,en;q=0.9",
@@ -29,14 +28,13 @@ def scrap_soccervista_prob(evento):
 
         for fila in filas:
             cols = fila.find_all("td")
-            if len(cols) < 6:
-                continue
-            partido = cols[0].get_text(separator=" ").strip()
-            pred = cols[5].get_text().strip()
-            if " - " in partido:
-                casa, visita = [normalizar(x) for x in partido.split(" - ")]
-                if home_normal in casa and away_normal in visita:
-                    return pred
+            if len(cols) >= 6:
+                texto_partido = cols[0].get_text(separator=" ").strip()
+                pred = cols[5].get_text().strip()
+                if " - " in texto_partido:
+                    casa, visita = [normalizar(x) for x in texto_partido.split(" - ")]
+                    if home_normal in casa and away_normal in visita:
+                        return pred
         return "No encontrado"
     except Exception as e:
         return f"Error: {str(e)}"
