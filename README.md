@@ -1,13 +1,9 @@
-# Backend con Scraping Real desde Forebet
 
-Este backend consulta predicciones reales desde Forebet (1X2, Over/Under, BTTS, marcador estimado).
+# Backend Unificado de Apuestas de Valor
 
-- `/` → Estado del servicio
-- `/apuestas` → JSON con resultados + predicción de Forebet
+Este backend combina scraping real o simulado desde Forebet, SoccerVista y TotalCorner.
 
-## Despliegue en Render
+- `/apuestas` → JSON con predicciones, coincidencias y valor esperado
 
-Start Command:
-```
-uvicorn main:app --host 0.0.0.0 --port 10000
-```
+Deploy en Render:
+- Usa `uvicorn main:app --host 0.0.0.0 --port 10000`
