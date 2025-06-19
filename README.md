@@ -1,9 +1,9 @@
-# Backend con Scraping Real desde SoccerVista (next_matches.php)
+# Backend con Scraping Real desde Forebet
 
-Este backend consulta predicciones reales desde una URL alternativa de SoccerVista (`next_matches.php`).
+Este backend consulta predicciones reales desde Forebet (1X2, Over/Under, BTTS, marcador estimado).
 
 - `/` → Estado del servicio
-- `/apuestas` → JSON con predicción 1X2 incluida
+- `/apuestas` → JSON con resultados + predicción de Forebet
 
 ## Despliegue en Render
 
