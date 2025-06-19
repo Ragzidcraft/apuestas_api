@@ -1,18 +1,15 @@
 
-# Apuestas de Valor - DEMO Render
+# Backend de Apuestas de Valor Inteligente (Demo Extendida)
 
-Esta demo simula 3 eventos deportivos con cuotas y predicciones de múltiples plataformas (API-Football, Kickoff, etc.), y sirve el análisis como API FastAPI.
+Este proyecto simula un backend con scraping de plataformas externas (SoccerVista, Forebet, TotalCorner) y muestra valor esperado, coincidencias y selección recomendada.
 
 ## Endpoints
 
-- `/` → Prueba básica
-- `/apuestas` → JSON de apuestas de valor
+- `/` → Estado del servicio
+- `/apuestas` → JSON con eventos de valor
 
-## Despliegue en Render
+## Despliegue
 
-1. Sube este repositorio a GitHub
-2. Ve a [https://render.com](https://render.com) y crea un nuevo servicio Web
-3. Conecta el repositorio
-4. Render detectará el `main.py` y usará el puerto 10000
-
-¡Listo!
+1. Sube esto a GitHub
+2. Conéctalo a https://render.com como Web Service
+3. Usa el Start Command: `uvicorn main:app --host 0.0.0.0 --port 10000`
