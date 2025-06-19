@@ -1,15 +1,11 @@
 
-# Backend de Apuestas de Valor Inteligente (Demo Extendida)
+# Backend Apuestas con Scraping Real de SoccerVista
 
-Este proyecto simula un backend con scraping de plataformas externas (SoccerVista, Forebet, TotalCorner) y muestra valor esperado, coincidencias y selección recomendada.
-
-## Endpoints
+Este backend consulta predicciones reales desde SoccerVista para emparejar con datos simulados de eventos y mostrar apuestas de valor.
 
 - `/` → Estado del servicio
-- `/apuestas` → JSON con eventos de valor
+- `/apuestas` → JSON con resultados + predicción de SoccerVista
 
-## Despliegue
-
-1. Sube esto a GitHub
-2. Conéctalo a https://render.com como Web Service
-3. Usa el Start Command: `uvicorn main:app --host 0.0.0.0 --port 10000`
+Despliegue en Render:
+- Python
+- Start Command: `uvicorn main:app --host 0.0.0.0 --port 10000`
